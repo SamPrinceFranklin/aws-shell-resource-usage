@@ -56,18 +56,48 @@ The script provides an example output, demonstrating how the different resource 
 Here is an example of the script's output:
 
 ```
-List of S3 buckets
-2023-05-22 14:34:15 my-bucket-1
-2023-06-01 09:21:57 my-bucket-2
+bash-3.2$ ./aws_resource_tracker.sh
+AWS Resource Tracker
+Author: Sam Prince Franklin
+Date: 5th June 2023
+Version: v1
 
-List of EC2 instances
-No instances found.
+===============================
+S3 Buckets
+===============================
+No S3 buckets found.
 
-List of Lambda functions
-No functions found.
+===============================
+EC2 Instances
+===============================
+{
+    "Reservations": []
+}
 
-List of IAM users
-2023-05-08 05:00:23 terraform_sam
+===============================
+Lambda Functions
+===============================
+{
+    "Functions": []
+}
+
+===============================
+IAM Users
+===============================
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "terraform_sXXXXXX",
+            "UserId": "AXXXXXXXXXXXXXXXXXXX",
+            "Arn": "arn:aws:iam::1XXXXXXXXXXXXXXXX0:user/terraform_sXXXXXX",
+            "CreateDate": "2023-0XXXXXXXXXX"
+        }
+    ]
+}
+
+bash-3.2$ 
+
 ```
 
 Please note that if there are no resources of a specific type found in your AWS account, the script will display "No \<resource type> found."
